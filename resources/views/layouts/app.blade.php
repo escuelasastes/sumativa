@@ -25,7 +25,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-inverse navbar-expand-lg bg-dark" role="navigation-demo">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -46,7 +46,7 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link btn btn-social btn-fill btn-youtube" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
@@ -86,13 +86,12 @@
 </body>
 <footer class="footer footer-black" data-background-color="black">
     <div class="container">
-      <div class="copyright float-right">
-        ©
-        <script>
-          document.write(new Date().getFullYear())
-        </script> made with <i class="material-icons">favorite</i> by
-        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-      </div>
+      <div class="copyright pull-center">
+                Copyright ©
+                <script>
+                  document.write(new Date().getFullYear())
+                </script> Creative Tim All Rights Reserved.
+        </div>
     </div>
   </footer>
 </html>

@@ -11,13 +11,9 @@
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
-                                {{ __('Estrategia(s) de Instrucción') }}
-                            </span>
-
+                            <span class="card-title"><center><strong>Estrategia(s) de Instrucción</strong></center></span>
                              <div class="float-right">
-                                <a href="{{ route('estrat-ins.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('estrat-ins.create') }}" class="btn btn-social btn-fill btn-facebook"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -37,8 +33,8 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
+                            <table class="table">
+                                <thead>
                                     <tr>
                                         <th class="text-center">#</th>
 										<th class="text-center">Estrategia(s) de Instrucción</th>

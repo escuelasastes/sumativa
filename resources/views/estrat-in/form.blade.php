@@ -1,9 +1,9 @@
 <div class="box box-info padding-1">
-    <div class="box-body">
+    <div class="form-row">
         
-        <div class="form-group">
-            {{ Form::label('estrategia') }}
-            {{ Form::text('estrategia', $estratIn->estrategia, ['class' => 'form-control' . ($errors->has('estrategia') ? ' is-invalid' : ''), 'placeholder' => 'Estrategia']) }}
+        <div class="form-group col-md-6">
+            {{ Form::label('Estrategia(s) de Instrucción:') }}
+            {{ Form::text('estrategia', $estratIn->estrategia, ['class' => 'form-control' . ($errors->has('Estrategia(s) de Instrucción') ? ' is-invalid' : ''), 'placeholder' => 'Estrategia']) }}
             {!! $errors->first('estrategia', '<div class="invalid-feedback">:message</p>') !!}
         </div>
 

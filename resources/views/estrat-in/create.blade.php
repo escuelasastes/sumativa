@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Estrat In</span>
+                        <span class="card-title"><center><strong>Estrategia(s) de Instrucción</strong></center></span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('estrat-ins.store') }}"  role="form" enctype="multipart/form-data">

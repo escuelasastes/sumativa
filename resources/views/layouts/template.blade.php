@@ -113,7 +113,6 @@
         </main>
     </div>
 </body>
-</html>
 <footer class="footer footer-black" data-background-color="black">
     <div class="container">
       <div class="copyright pull-center">
@@ -124,3 +123,4 @@
         </div>
     </div>
   </footer>
+</html>
