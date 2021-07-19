@@ -1,7 +1,6 @@
 <div class="box box-info padding-1">
-    <div class="box-body">
-        
-        <div class="form-group">
+    <div class="form-row">
+        <div class="form-group col-md-6">
             {{ Form::label('materias') }}
             <select name="materias_id" id="materias_id" class="form-control">
                 @foreach ($materias as $materia)
@@ -14,6 +13,6 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-social btn-fill btn-behance">Submit</button>
+        <center><button type="submit" class="btn btn-social btn-fill btn-linkedin">Submit</button></center>
     </div>
 </div>

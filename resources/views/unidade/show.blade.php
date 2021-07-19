@@ -19,48 +19,40 @@
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Numero de unidad:</strong>
-                            {{ $unidade->numUnidad }}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead">
+                                    <tr>
+                                        <th class="text-center">#</th>
+										<th>Unidad</th>
+                                        <th>Nombre</th>
+										<th>Competencia especifica de la unidad</th>
+										<th>Temas </th>
+										<th>Subtemas</th>
+										<th>Estrategia(s) de Instrucción</th>
+										<th>Producto (s) y/o Aprendizaje(s)Esperado(s)</th>
+										<th>Sistema de evaluacion</th>
+										<th>Examenes</th>
+										<th>PLANEACIÓN DE PROYECTOS Y/O PRÁCTICAS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td class="text-center">{{ $unidade->id}}</td>
+											<td>{{ $unidade->numUnidad }}</td>
+                                            <td>{{ $unidade->nomunidad }}</td>
+											<td>{{ $unidade->competEspTema }}</td>
+											<td>{{ $unidade->temas_id }}</td>
+											<td>{{ $unidade->subtemas_id }}</td>
+											<td>{{ $unidade->estrat_ins_id }}</td>
+											<td>{{ $unidade->prodespers_id }}</td>
+											<td>{{ $unidade->sisevals_id }}</td>
+											<td>{{ $unidade->examenes_id }}</td>
+											<td>{{ $unidade->planpros_id }}</td>
+                                        </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="form-group">
-                            <strong>Competencia especifica del tema:</strong>
-                            {{ $unidade->competEspTema }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Nombre de la unidad:</strong>
-                            {{ $unidade->nomunidad }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Temas :</strong>
-                            {{ $unidade->temas_id }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Subtemas :</strong>
-                            {{ $unidade->subtemas_id }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Estrategias de instruccion:</strong>
-                            {{ $unidade->estrat_ins_id }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Productos esperados:</strong>
-                            {{ $unidade->prodespers_id }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Sistema de evaluacions:</strong>
-                            {{ $unidade->sisevals_id }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Examenes:</strong>
-                            {{ $unidade->examenes_id }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Plan de proyectos:</strong>
-                            {{ $unidade->planpros_id }}
-                        </div>
-
                     </div>
                 </div>
             </div>
