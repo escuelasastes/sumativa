@@ -65,13 +65,7 @@ class ExameneController extends Controller
     public function show($id)
     {
         $examene = Examene::findorFail($id);
-        $examenes = Examene::select("examenes.id","examenes.evaluacion","examenes.reveval","entrSE")
-        ->selectRaw("DATE_FORMAT(evaluacion,'%d/%m/%Y') as evaluacion")
-        ->selectRaw("DATE_FORMAT(reveval,'%d/%m/%Y') as reveval")
-        ->selectRaw("DATE_FORMAT(entrSE,'%d/%m/%Y') as entrSE")
-        ->get();
-
-        return view('examene.show', compact('examene','examenes'));
+        return view('examene.show', compact('examene'));
     }
 
     /**
