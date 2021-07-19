@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Unidade</span>
+                        <span class="card-title"><center><strong>Unidad</strong></center></span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('unidades.update', $unidade->id) }}"  role="form" enctype="multipart/form-data">

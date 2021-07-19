@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Tema</span>
+                            <span class="card-title"><center><strong>Tema(s)</strong></center></span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-social btn-fill btn-reddit" href="{{ route('temas.index') }}"> Back</a>

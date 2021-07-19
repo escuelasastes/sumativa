@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Subtema</span>
+                        <span class="card-title"><center><strong>Subtema(s)</strong></center></span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('subtemas.store') }}"  role="form" enctype="multipart/form-data">

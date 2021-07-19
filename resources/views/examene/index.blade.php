@@ -11,7 +11,6 @@
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-
                             <span class="card-title">
                                 <center><strong>{{ __('SECUENCIA DE CONTROL ADMINISTRATIVO') }}</strong></center>
                             </span>

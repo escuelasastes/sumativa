@@ -12,9 +12,9 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <h4 id="card_title">
-                                <small>{{ __('Producto (s) y/o Aprendizaje(s)Esperado(s)') }}</small>
-                            </h4>
+                            <span class="card_title">
+                                <center><strong>Producto (s) y/o Aprendizaje(s)Esperado(s)</strong></center>
+                            </span>
 
                              <div class="float-right">
                                 <a href="{{ route('prodespers.create') }}" class="btn btn-social btn-fill btn-facebook"  data-placement="left">

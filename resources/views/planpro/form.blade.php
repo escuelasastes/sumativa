@@ -1,6 +1,6 @@
 <div class="box box-info padding-1">
     <div class="form-row">
-        
+        <br><br>
         <div class="form-group col-md-2">
             {{ Form::label('Número de proyecto:') }}
             {{ Form::text('noPr', $planpro->noPr, ['class' => 'form-control' . ($errors->has('noPr') ? ' is-invalid' : ''), 'placeholder' => 'Número de proyecto']) }}

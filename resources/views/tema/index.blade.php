@@ -12,9 +12,7 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title">
-                                {{ __('Tema') }}
-                            </span>
+                            <span class="card-title"><center><strong>Tema(s)</strong></center></span>
 
                              <div class="float-right">
                                 <a href="{{ route('temas.create') }}" class="btn btn-social btn-fill btn-facebook"  data-placement="left">

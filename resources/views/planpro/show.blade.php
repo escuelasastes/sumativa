@@ -10,8 +10,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">PLANEACIÓN DE PROYECTOS Y/O PRÁCTICAS </span>
+                        <div class="float-center">
+                            <span class="card-title">
+                                <center><strong>PLANEACIÓN DE PROYECTOS Y/O PRÁCTICAS</strong></center>
+                            </span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-social btn-fill btn-reddit" href="{{ route('planpros.index') }}"> Back</a>

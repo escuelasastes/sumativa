@@ -11,11 +11,9 @@
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title" class="tim-note">
-                                <strong class="text-center">{{ __('PLANEACIÓN DE PROYECTOS Y/O PRÁCTICAS') }}</strong>
+                            <span class="card-title">
+                                <center><strong>PLANEACIÓN DE PROYECTOS Y/O PRÁCTICAS</strong></center>
                             </span>
-
                              <div class="float-right">
                                 <a href="{{ route('planpros.create') }}" class="btn btn-social btn-fill btn-facebook"  data-placement="left">
                                   {{ __('Create New') }}
@@ -25,6 +23,12 @@
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
+                            <div class="alert-icon">
+                                <i class="material-icons">check</i>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                            </button>
                             <p>{{ $message }}</p>
                         </div>
                     @endif

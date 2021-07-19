@@ -41,7 +41,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">#</th> 
-										<th>Subtema y/o práctica</th>
+										<th class="text-center">Subtema y/o práctica</th>
                                         <th class="text-right"></th>
                                     </tr>
                                 </thead>
@@ -49,7 +49,7 @@
                                     @foreach ($subtemas as $subtema)
                                         <tr>
                                             <td class="text-center">{{ ++$i }}</td>
-											<td>{{ $subtema->subtemas }}</td>
+											<td class="text-center">{{ $subtema->subtemas }}</td>
                                             <td class="td-actions text-right">
                                                 <form action="{{ route('subtemas.destroy',$subtema->id) }}" method="POST">
                                                     <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('subtemas.show',$subtema->id) }}">
