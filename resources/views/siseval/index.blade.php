@@ -12,9 +12,7 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title">
-                                {{ __('SISTEMA DE EVALUACIÓN') }}
-                            </span>
+                            <span class="card-title"><center><strong>SISTEMA DE EVALUACIÓN</strong></center></span>
 
                              <div class="float-right">
                                 <a href="{{ route('sisevals.create') }}" class="btn btn-social btn-fill btn-facebook"  data-placement="left">
@@ -57,8 +55,8 @@
 											<td>{{ $siseval->competencias }}</td>
 											<td>{{ $siseval->criterios }}</td>
 											<td class="text-center">{{ $siseval->ponderaciones }}</td>
-										    <td class="td-actions text-right">{{ $siseval->total }}</td>
-                                            <td>
+										    <td class="text-center">{{ $siseval->total }}</td>
+                                            <td class="td-actions text-right">
                                                 <form action="{{ route('sisevals.destroy',$siseval->id) }}" method="POST">
                                                     <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('sisevals.show',$siseval->id) }}">
                                                         <i class="material-icons">person</i>

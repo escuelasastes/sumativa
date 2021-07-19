@@ -15,9 +15,9 @@ class Examenes extends Migration
     {
         Schema::create('examenes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('evaluacion');
-            $table->string('reveval');
-            $table->string('entrSE');
+            $table->datetime('evaluacion');
+            $table->datetime('reveval');
+            $table->datetime('entrSE');
             $table->timestamps();
         });
     }

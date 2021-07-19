@@ -34,30 +34,27 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Numunidad</th>
-										<th>Competesptema</th>
-										<th>Nomunidad</th>
+                                        <th class="text-center">#</th>
+										<th>Unidad</th>
+                                        <th>Nombre</th>
+										<th>Competencia especifica de la unidad</th>
 										<th>Temas </th>
 										<th>Subtemas</th>
-										<th>Estrategias instruccion Id</th>
-										<th>Productos esperados Id</th>
+										<th>Estrategia(s) de Instrucción</th>
+										<th>Producto (s) y/o Aprendizaje(s)Esperado(s)</th>
 										<th>Sistema de evaluacion</th>
 										<th>Examenes</th>
-										<th>Planpros</th>
-
+										<th>PLANEACIÓN DE PROYECTOS Y/O PRÁCTICAS</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($unidades as $unidade)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
+                                            <td class="text-center">{{ ++$i }}</td>
 											<td>{{ $unidade->numUnidad }}</td>
+                                            <td>{{ $unidade->nomunidad }}</td>
 											<td>{{ $unidade->competEspTema }}</td>
-											<td>{{ $unidade->nomunidad }}</td>
 											<td>{{ $unidade->temas_id }}</td>
 											<td>{{ $unidade->subtemas_id }}</td>
 											<td>{{ $unidade->estrat_ins_id }}</td>
@@ -65,14 +62,20 @@
 											<td>{{ $unidade->sisevals_id }}</td>
 											<td>{{ $unidade->examenes_id }}</td>
 											<td>{{ $unidade->planpros_id }}</td>
-
-                                            <td>
+                                            <td class="td-actions text-center">
                                                 <form action="{{ route('unidades.destroy',$unidade->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('unidades.show',$unidade->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('unidades.edit',$unidade->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('unidades.show',$unidade->id) }}">
+                                                        <i class="material-icons">person</i>
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                    <a class="btn btn-success btn-just-icon btn-sm" rel="tooltip" href="{{ route('unidades.edit',$unidade->id) }}">
+                                                        <i class="material-icons">edit</i>
+                                                    </a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>

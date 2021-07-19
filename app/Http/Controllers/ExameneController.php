@@ -18,10 +18,12 @@ class ExameneController extends Controller
      */
     public function index()
     {
-        $examenes = Examene::paginate();
-
-        return view('examene.index', compact('examenes'))
-            ->with('i', (request()->input('page', 1) - 1) * $examenes->perPage());
+        $examenes = Examene::select("examenes.id","examenes.evaluacion","examenes.reveval","entrSE")
+        ->selectRaw("DATE_FORMAT(evaluacion,'%d/%m/%Y') as evaluacion")
+        ->selectRaw("DATE_FORMAT(reveval,'%d/%m/%Y') as reveval")
+        ->selectRaw("DATE_FORMAT(entrSE,'%d/%m/%Y') as entrSE")
+        ->paginate(10);
+        return view('examene.index', compact('examenes'));
     }
 
     /**
@@ -41,11 +43,14 @@ class ExameneController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Examene $examene)
     {
         request()->validate(Examene::$rules);
 
-        $examene = Examene::create($request->all());
+        $examene->evaluacion=$request->input('evaluacion');
+        $examene->reveval=$request->input('reveval');
+        $examene->entrSE=$request->input('entrSE');
+        $examene->save();
 
         return redirect()->route('examenes.index')
             ->with('success', 'Examene created successfully.');
@@ -59,9 +64,14 @@ class ExameneController extends Controller
      */
     public function show($id)
     {
-        $examene = Examene::find($id);
+        $examene = Examene::findorFail($id);
+        $examenes = Examene::select("examenes.id","examenes.evaluacion","examenes.reveval","entrSE")
+        ->selectRaw("DATE_FORMAT(evaluacion,'%d/%m/%Y') as evaluacion")
+        ->selectRaw("DATE_FORMAT(reveval,'%d/%m/%Y') as reveval")
+        ->selectRaw("DATE_FORMAT(entrSE,'%d/%m/%Y') as entrSE")
+        ->get();
 
-        return view('examene.show', compact('examene'));
+        return view('examene.show', compact('examene','examenes'));
     }
 
     /**
@@ -72,7 +82,7 @@ class ExameneController extends Controller
      */
     public function edit($id)
     {
-        $examene = Examene::find($id);
+        $examene = Examene::findorFail($id);
 
         return view('examene.edit', compact('examene'));
     }
@@ -84,11 +94,15 @@ class ExameneController extends Controller
      * @param  Examene $examene
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Examene $examene)
+    public function update(Request $request, $id)
     {
         request()->validate(Examene::$rules);
 
-        $examene->update($request->all());
+        $examene=Examene::findorFail($id);
+        $examene->evaluacion=$request->input('evaluacion');
+        $examene->reveval=$request->input('reveval');
+        $examene->entrSE=$request->input('entrSE');
+        $examene->save();
 
         return redirect()->route('examenes.index')
             ->with('success', 'Examene updated successfully');

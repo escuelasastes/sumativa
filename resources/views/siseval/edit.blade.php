@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Siseval</span>
+                        <span class="card-title"><center><strong>SISTEMA DE EVALUACIÓN</strong></center></span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('sisevals.update', $siseval->id) }}"  role="form" enctype="multipart/form-data">

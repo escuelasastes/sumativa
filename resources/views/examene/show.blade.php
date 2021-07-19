@@ -11,7 +11,9 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Examene</span>
+                            <span class="card-title">
+                                <center><strong>SECUENCIA DE CONTROL ADMINISTRATIVO</strong></center>
+                            </span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary" href="{{ route('examenes.index') }}"> Back</a>
@@ -19,21 +21,26 @@
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Evaluacion:</strong>
-                            {{ $examene->evaluacion }}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead">
+                                    <tr>
+                                        <th class="text-center">#</th>
+										<th class="text-center">Evaluación</th>
+										<th class="text-center">Revisión de la evaluación</th>
+										<th class="text-center">Entrega Servicios Escolares</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td class="text-center">{{ $examene->id }}</td>
+											<td class="text-center">{{ $examene->evaluacion }}</td>
+											<td class="text-center">{{ $examene->reveval }}</td>
+											<td class="text-center">{{ $examene->entrSE }}</td>
+                                        </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="form-group">
-                            <strong>Reveval:</strong>
-                            {{ $examene->reveval }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Entrse:</strong>
-                            {{ $examene->entrSE }}
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>

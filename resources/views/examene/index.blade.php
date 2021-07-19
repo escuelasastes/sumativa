@@ -12,12 +12,12 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title">
-                                {{ __('Examene') }}
+                            <span class="card-title">
+                                <center><strong>{{ __('SECUENCIA DE CONTROL ADMINISTRATIVO') }}</strong></center>
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('examenes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('examenes.create') }}" class="btn btn-social btn-fill btn-facebook"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -25,6 +25,12 @@
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
+                            <div class="alert-icon">
+                                <i class="material-icons">check</i>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                            </button>
                             <p>{{ $message }}</p>
                         </div>
                     @endif
@@ -34,31 +40,34 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Evaluacion</th>
-										<th>Reveval</th>
-										<th>Entrse</th>
-
-                                        <th></th>
+                                        <th class="text-center">#</th>
+										<th class="text-center">Evaluación</th>
+										<th class="text-center">Revisión de la evaluación</th>
+										<th class="text-center">Entrega Servicios Escolares</th>
+                                        <th class="text-right">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($examenes as $examene)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $examene->evaluacion }}</td>
-											<td>{{ $examene->reveval }}</td>
-											<td>{{ $examene->entrSE }}</td>
-
-                                            <td>
+                                            <td class="text-center">{{ $loop->iteration }}</td>
+											<td class="text-center">{{ $examene->evaluacion }}</td>
+											<td class="text-center">{{ $examene->reveval }}</td>
+											<td class="text-center">{{ $examene->entrSE }}</td>
+                                            <td class="td-actions text-right">
                                                 <form action="{{ route('examenes.destroy',$examene->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('examenes.show',$examene->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('examenes.edit',$examene->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('examenes.show',$examene->id) }}">
+                                                        <i class="material-icons">person</i>
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('examenes.edit',$examene->id) }}">
+                                                        <i class="material-icons">edit</i>
+                                                    </a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button  class="btn btn-danger btn-just-icon btn-sm">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>
