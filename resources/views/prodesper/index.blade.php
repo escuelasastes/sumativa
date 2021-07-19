@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    Prodesper
-@endsection
+@section('title', 'Producto(s)')
 
 @section('content')
     <div class="container-fluid">

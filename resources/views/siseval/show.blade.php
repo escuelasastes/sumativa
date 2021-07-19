@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    {{ $siseval->name ?? 'Show Siseval' }}
-@endsection
+@section('title', 'Sistema Evaluación')
 
 @section('content')
     <section class="content container-fluid">

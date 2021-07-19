@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    {{ $tema->name ?? 'Show Tema' }}
-@endsection
+@section('title', 'Tema(s)')
 
 @section('content')
     <section class="content container-fluid">

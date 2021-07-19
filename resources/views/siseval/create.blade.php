@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    Create Siseval
-@endsection
+@section('title', 'Sistema Evaluación')
 
 @section('content')
     <section class="content container-fluid">

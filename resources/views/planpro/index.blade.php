@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    Planpro
-@endsection
+@section('title', 'Proyectos')
 
 @section('content')
     <div class="container-fluid">

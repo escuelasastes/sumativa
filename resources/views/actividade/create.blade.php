@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    Create Actividade
-@endsection
+@section('title', 'Nueva Actividad')
 
 @section('content')
     <section class="content container-fluid">
@@ -13,7 +11,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Actividade</span>
+                        <span class="card-title"><center><strong>Actividades</strong></center></span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('actividades.store') }}"  role="form" enctype="multipart/form-data">

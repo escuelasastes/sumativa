@@ -1,9 +1,5 @@
 @extends('layouts.template')
-
-@section('template_title')
-    Update Actividade
-@endsection
-
+@section('title', 'Actividad')
 @section('content')
     <section class="content container-fluid">
         <div class="">
@@ -13,7 +9,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Actividade</span>
+                        <span class="card-title"><center><strong>Actividades</strong></center></span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('actividades.update', $actividade->id) }}"  role="form" enctype="multipart/form-data">

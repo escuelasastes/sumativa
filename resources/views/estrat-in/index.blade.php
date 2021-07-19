@@ -1,9 +1,5 @@
 @extends('layouts.template')
-
-@section('template_title')
-    Estrat In
-@endsection
-
+@section('title', 'Estrategia(s)')
 @section('content')
     <div class="container-fluid">
         <div class="row">

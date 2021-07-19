@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    {{ $prodesper->name ?? 'Show Prodesper' }}
-@endsection
+@section('title', 'Producto(s)')
 
 @section('content')
     <section class="content container-fluid">

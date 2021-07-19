@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    Create Examene
-@endsection
+@section('title', 'SECUENCIA DE CONTROL')
 
 @section('content')
     <section class="content container-fluid">

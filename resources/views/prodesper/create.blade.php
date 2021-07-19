@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    Create Prodesper
-@endsection
+@section('title', 'Producto(s)')
 
 @section('content')
     <section class="content container-fluid">

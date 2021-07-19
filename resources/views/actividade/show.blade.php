@@ -1,9 +1,5 @@
 @extends('layouts.template')
-
-@section('template_title')
-    {{ $actividade->name ?? 'Show Actividade' }}
-@endsection
-
+@section('title', 'Actividad')
 @section('content')
     <section class="content container-fluid">
         <div class="row">
@@ -11,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Actividade</span>
+                            <span class="card-title"><center><strong>Actividades</strong></center></span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary" href="{{ route('actividades.index') }}"> Back</a>
@@ -19,12 +15,22 @@
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Actividad:</strong>
-                            {{ $actividade->actividad }}
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+										<th class="text-center">Actividad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td class="text-center">{{ $actividade->id }}</td> 
+											<td class="text-center">{{ $actividade->actividad }}</td>
+                                        </tr>
+                                </tbody>
+                            </table>
                         </div>
-
                     </div>
                 </div>
             </div>

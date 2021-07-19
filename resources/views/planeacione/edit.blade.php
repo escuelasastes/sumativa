@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    Update Planeacione
-@endsection
+@section('title', 'Planeaciones')
 
 @section('content')
     <section class="content container-fluid">

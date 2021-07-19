@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    Create Estrat In
-@endsection
+@section('title', 'Estrategia(s)')
 
 @section('content')
     <section class="content container-fluid">

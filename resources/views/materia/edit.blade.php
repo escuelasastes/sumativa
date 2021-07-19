@@ -1,9 +1,5 @@
 @extends('layouts.template')
-
-@section('template_title')
-    Update Materia
-@endsection
-
+@section('title', 'Materias')
 @section('content')
     <section class="content container-fluid">
         <div class="">

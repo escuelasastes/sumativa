@@ -1,8 +1,6 @@
 @extends('layouts.template')
 
-@section('template_title')
-    Unidade
-@endsection
+@section('title', 'Unidades')
 
 @section('content')
     <div class="container-fluid">
