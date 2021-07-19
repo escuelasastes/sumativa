@@ -68,7 +68,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('planeaciones.index') }}">{{ __('Planeaciones') }}</a>
                     </li>
-                </ul>
+                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -120,7 +120,7 @@
                 Copyright ©
                 <script>
                   document.write(new Date().getFullYear())
-                </script>Creative Tim All Rights Reserved.
+                </script> Creative Tim All Rights Reserved.
         </div>
     </div>
   </footer>

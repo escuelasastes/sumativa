@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Prodesper</span>
+                        <span class="card-title">Producto (s) y/o Aprendizaje(s)Esperado(s)</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('prodespers.store') }}"  role="form" enctype="multipart/form-data">

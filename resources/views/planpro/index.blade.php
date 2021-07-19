@@ -38,7 +38,7 @@
                                         <th class="text-right">Unidad</th>
 										<th class="text-center">Competencia</th>
 										<th class="text-right">Ponderacion</th>
-                                        <th></th>
+                                        <th class="text-right"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,7 +49,7 @@
 											<td class="text-center">{{ $planpro->competencia }}</td>
 											<td class="text-center">{{ $planpro->ponderacion }}</td>
 
-                                            <td class="td-actions text-right">
+                                            <td class="td-actions text-center">
                                                 <form action="{{ route('planpros.destroy',$planpro->id) }}" method="POST">
                                                     <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('planpros.show',$planpro->id) }}">
                                                         <i class="material-icons">person</i>

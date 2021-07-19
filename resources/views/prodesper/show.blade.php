@@ -11,22 +11,31 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Prodesper</span>
+                            <span class="card-title">Producto (s) y/o Aprendizaje(s)Esperado(s)</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-social btn-fill btn-reddit" href="{{ route('prodespers.index') }}"> Back</a>
                         </div>
                     </div>
-
-                    <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Prodesp:</strong>
-                            {{ $prodesper->prodEsp }}
-                        </div>
-
-                    </div>
                 </div>
+            </div>
+            <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+										<th class="text-right">Producto (s) y/o Aprendizaje(s)Esperado(s)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td class="text-center">{{$prodesper->id}}</td>
+											<td class="text-right">{{ $prodesper->prodEsp }}</td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
             </div>
         </div>
     </section>

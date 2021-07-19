@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('unidades.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('unidades.create') }}"  class="btn btn-social btn-fill btn-facebook"  data-placement="left">
                                   {{ __('agregar unidad') }}
                                 </a>
                               </div>

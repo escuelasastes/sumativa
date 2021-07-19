@@ -2,12 +2,12 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('materias_id') }}
+            {{ Form::label('materias') }}
             <select name="materias_id" id="materias_id" class="form-control">
-            <option>Selecciona una materia</option> 
-             @foreach ($materias as $materia)
-             <option value="{{$materia['id']}}">{{$materia['nombre']}}</option> 
-            @endforeach
+                @foreach ($materias as $materia)
+                    <option value="{{$materia['id']}}">{{$materia['nombre']}}</option> 
+                @endforeach
+                <span class="bs-caret"><span class="caret"></span></span>
             </select>
             {!! $errors->first('materias_id', '<div class="invalid-feedback">:message</p>') !!}
         </div>

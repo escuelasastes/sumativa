@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <h4 id="card_title">
-                                <small>{{ __('Productos Esperados') }}</small>
+                                <small>{{ __('Producto (s) y/o Aprendizaje(s)Esperado(s)') }}</small>
                             </h4>
 
                              <div class="float-right">
@@ -41,7 +41,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-										<th class="text-right">Productos Esperados</th>
+										<th class="text-right">Producto (s) y/o Aprendizaje(s)Esperado(s)</th>
                                         <th class="text-right">Actions</th>
                                     </tr>
                                 </thead>
@@ -52,13 +52,13 @@
 											<td class="text-right">{{ $prodesper->prodEsp }}</td>
                                             <td class="td-actions text-right">
                                                 <form action="{{ route('prodespers.destroy',$prodesper->id) }}" method="POST">
-                                                <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('prodespers.show',$prodesper->id) }}">
-                                                    <i class="material-icons">person</i>
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                                <a class="btn btn-success btn-just-icon btn-sm" rel="tooltip" href="{{ route('prodespers.edit',$prodesper->id) }}">
-                                                    <i class="material-icons">edit</i>
-                                                </a>
+                                                    <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('prodespers.show',$prodesper->id) }}">
+                                                        <i class="material-icons">person</i>
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                    <a class="btn btn-success btn-just-icon btn-sm" rel="tooltip" href="{{ route('prodespers.edit',$prodesper->id) }}">
+                                                        <i class="material-icons">edit</i>
+                                                    </a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-just-icon btn-sm">

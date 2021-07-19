@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Siseval') }}
+                                {{ __('SISTEMA DE EVALUACIÓN') }}
                             </span>
 
                              <div class="float-right">
@@ -25,44 +25,53 @@
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
+                            <div class="alert-icon">
+                                <i class="material-icons">check</i>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                            </button>
                             <p>{{ $message }}</p>
                         </div>
                     @endif
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Ejes</th>
-										<th>Competencias</th>
-										<th>Criterios</th>
-										<th>Ponderaciones</th>
-										<th>Total</th>
-
-                                        <th></th>
+                                        <th class="text-center">#</th>
+										<th class="text-center">Ejes</th>
+										<th class="text-center">Competencias</th>
+										<th class="text-center">Factores y/o Criterios de Evaluación</th>
+										<th class="text-center">Ponderación</th>
+										<th class="text-center">Total</th>
+                                        <th class="text-right"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($sisevals as $siseval)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $siseval->ejes }}</td>
+                                            <td class="text-center">{{ ++$i }}</td>
+											<td class="text-left">{{ $siseval->ejes }}</td>
 											<td>{{ $siseval->competencias }}</td>
 											<td>{{ $siseval->criterios }}</td>
-											<td>{{ $siseval->ponderaciones }}</td>
-											<td>{{ $siseval->total }}</td>
-
+											<td class="text-center">{{ $siseval->ponderaciones }}</td>
+										    <td class="td-actions text-right">{{ $siseval->total }}</td>
                                             <td>
                                                 <form action="{{ route('sisevals.destroy',$siseval->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('sisevals.show',$siseval->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('sisevals.edit',$siseval->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('sisevals.show',$siseval->id) }}">
+                                                        <i class="material-icons">person</i>
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                    <a class="btn btn-success btn-just-icon btn-sm" rel="tooltip" href="{{ route('sisevals.edit',$siseval->id) }}">
+                                                        <i class="material-icons">edit</i>
+                                                    </a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -11,20 +11,32 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Tema</span>
+                            <span class="card-title">Tema</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('temas.index') }}"> Back</a>
+                            <a class="btn btn-social btn-fill btn-reddit" href="{{ route('temas.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
                         <div class="form-group">
-                            <strong>Temas:</strong>
-                            {{ $tema->temas }}
+                            <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+										<th class="text-center">Temas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td class="text-center">{{ $tema->id }}</td>
+											<td class="text-center">{{ $tema->temas }}</td>
+                                        </tr>
+                                </tbody>
+                            </table>
                         </div>
-
+                        </div>
                     </div>
                 </div>
             </div>

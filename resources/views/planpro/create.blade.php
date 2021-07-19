@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Planpro</span>
+                        <span class="card-title">PLANEACIÓN DE PROYECTOS Y/O PRÁCTICAS</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('planpros.store') }}"  role="form" enctype="multipart/form-data">
