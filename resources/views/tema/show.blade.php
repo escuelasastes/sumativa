@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('template_title')
     {{ $tema->name ?? 'Show Tema' }}

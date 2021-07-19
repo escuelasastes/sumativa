@@ -19,6 +19,7 @@
         <div class="form-group">
             {{ Form::label('unidades_id') }}
             <select name="unidades_id" id="unidades_id" class="form-control">
+            <option>Selecciona</option>
              @foreach ($unidades as $unidade)
              <option value="{{$unidade['id']}}">{{$unidade['nomunidad']}}</option> 
             @endforeach
@@ -28,6 +29,7 @@
         <div class="form-group">
             {{ Form::label('sisevals_id') }}
             <select name="sisevals_id" id="sisevals_id" class="form-control">
+            <option>Selecciona</option> 
              @foreach ($sisevals as $siseval)
              <option value="{{$siseval['id']}}">{{$siseval['criterios']}}</option> 
             @endforeach
@@ -37,6 +39,6 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-social btn-fill btn-behance">Submit</button>
     </div>
 </div>

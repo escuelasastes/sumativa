@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('template_title')
     {{ $planpro->name ?? 'Show Planpro' }}
@@ -14,7 +14,7 @@
                             <span class="card-title">Show Planpro</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('planpros.index') }}"> Back</a>
+                            <a class="btn btn-social btn-fill btn-reddit" href="{{ route('planpros.index') }}"> Back</a>
                         </div>
                     </div>
 

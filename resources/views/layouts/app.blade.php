@@ -33,39 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('temas.index') }}">{{ __('Temas') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('subtemas.index') }}">{{ __('Subtemas') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('prodespers.index') }}">{{ __('Productos Esperados') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('planpros.index') }}">{{ __('Plan de proyectos') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('estrat-ins.index') }}">{{ __('Estrategias de instruccion') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('examenes.index') }}">{{ __('Examenes') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('actividades.index') }}">{{ __('Actividades') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('sisevals.index') }}">{{ __('Sistema de evaluacion') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('unidades.index') }}">{{ __('Unidades') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('materias.index') }}">{{ __('Materias') }}</a>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('planeaciones.index') }}">{{ __('Planeaciones') }}</a>
-                    </ul>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -112,4 +80,39 @@
         </main>
     </div>
 </body>
+<footer class="footer" data-background-color="black">
+    <div class="container">
+      <nav class="float-left">
+        <ul>
+          <li>
+            <a href="https://www.creative-tim.com">
+              Creative Tim
+            </a>
+          </li>
+          <li>
+            <a href="https://creative-tim.com/presentation">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="http://blog.creative-tim.com">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="https://www.creative-tim.com/license">
+              Licenses
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright float-right">
+        ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>2021, made with <i class="material-icons">favorite</i> by
+        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+      </div>
+    </div>
+  </footer>
 </html>

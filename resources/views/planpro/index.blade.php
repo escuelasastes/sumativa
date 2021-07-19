@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('template_title')
     Planpro
@@ -12,12 +12,12 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title">
-                                {{ __('Planpro') }}
+                            <span id="card_title" class="tim-note">
+                                <strong class="text-center">{{ __('PLANEACIÓN DE PROYECTOS Y/O PRÁCTICAS') }}</strong>
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('planpros.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('planpros.create') }}" class="btn btn-social btn-fill btn-facebook"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -34,31 +34,35 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Nopr</th>
-										<th>Competencia</th>
-										<th>Ponderacion</th>
-
+										<th class="text-center"><strong>No. de Proyecto/Práctica</strong></th>
+                                        <th class="text-right">Unidad</th>
+										<th class="text-center">Competencia</th>
+										<th class="text-right">Ponderacion</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($planpros as $planpro)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $planpro->noPr }}</td>
-											<td>{{ $planpro->competencia }}</td>
-											<td>{{ $planpro->ponderacion }}</td>
+                                            <td class="text-center">{{ ++$i }}</td>
+											<td class="text-center">{{ $planpro->noPr }}</td>
+											<td class="text-center">{{ $planpro->competencia }}</td>
+											<td class="text-center">{{ $planpro->ponderacion }}</td>
 
-                                            <td>
+                                            <td class="td-actions text-right">
                                                 <form action="{{ route('planpros.destroy',$planpro->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('planpros.show',$planpro->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('planpros.edit',$planpro->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('planpros.show',$planpro->id) }}">
+                                                        <i class="material-icons">person</i>
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                    <a class="btn btn-success btn-just-icon btn-sm" rel="tooltip" href="{{ route('planpros.edit',$planpro->id) }}">
+                                                        <i class="material-icons">edit</i>
+                                                    </a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -31,3 +31,10 @@ Route::resource('sisevals', App\Http\Controllers\SisEvalController::class)->midd
 Route::resource('unidades', App\Http\Controllers\UnidadeController::class)->middleware('auth');
 Route::resource('materias', App\Http\Controllers\MateriaController::class)->middleware('auth');
 Route::resource('planeaciones', App\Http\Controllers\PlaneacioneController::class)->middleware('auth');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

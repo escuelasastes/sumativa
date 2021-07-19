@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('template_title')
     Create Tema
@@ -18,9 +18,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('temas.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
-
                             @include('tema.form')
-
                         </form>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('template_title')
     Materia
@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('materias.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('materias.create') }}" class="btn btn-social btn-fill btn-facebook"  data-placement="left">
                                   {{ __('Agregar nueva materia') }}
                                 </a>
                               </div>
@@ -25,44 +25,54 @@
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
+                            <div class="alert-icon">
+                                <i class="material-icons">check</i>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                            </button>
                             <p>{{ $message }}</p>
                         </div>
                     @endif
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Nombre</th>
-										<th>Competenciaa</th>
-										<th>Fuentes</th>
-										<th>Unidades</th>
-										<th>Sistema de evaluacion</th>
-
-                                        <th></th>
+                                        <th class="text-center">#</th>
+										<th class="text-right">Nombre</th>
+										<th class="text-right">Competencia</th>
+										<th class="text-right">Fuentes</th>
+										<th class="text-right">Unidades</th>
+										<th class="text-right">Sistema de evaluacion</th>
+                                        <th class="text-right">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($materias as $materia)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $materia->nombre }}</td>
-											<td>{{ $materia->competenciaA }}</td>
-											<td>{{ $materia->fuentes }}</td>
-											<td>{{ $materia->unidades_id }}</td>
-											<td>{{ $materia->sisevals_id }}</td>
+                                            <td class="text-center">{{ ++$i }}</td>
+											<td class="text-right">{{ $materia->nombre }}</td>
+											<td class="text-right">{{ $materia->competenciaA }}</td>
+											<td class="text-right">{{ $materia->fuentes }}</td>
+											<td class="text-right">{{ $materia->unidades_id }}</td>
+											<td class="text-right">{{ $materia->sisevals_id }}</td>
 
                                             <td>
                                                 <form action="{{ route('materias.destroy',$materia->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('materias.show',$materia->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('materias.edit',$materia->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('materias.show',$materia->id) }}">
+                                                        <i class="material-icons">person</i>
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                    <a class="btn btn-success btn-just-icon btn-sm" rel="tooltip" href="{{ route('materias.edit',$materia->id) }}">
+                                                    <i class="material-icons">edit</i>
+                                                    </a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>

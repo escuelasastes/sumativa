@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('template_title')
-    Planeacione
+    Planeaciones
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Planeacione') }}
+                                {{ __('Planeaciones') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('planeaciones.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('planeaciones.create') }}" class="btn btn-social btn-fill btn-facebook"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>

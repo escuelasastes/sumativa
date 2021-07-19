@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('template_title')
     {{ $sisEval->name ?? 'Show Sis Eval' }}
@@ -14,7 +14,7 @@
                             <span class="card-title">Show Sis Eval</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('sis-evals.index') }}"> Back</a>
+                            <a class="btn btn-social btn-fill btn-reddit" href="{{ route('sis-evals.index') }}"> Back</a>
                         </div>
                     </div>
 
