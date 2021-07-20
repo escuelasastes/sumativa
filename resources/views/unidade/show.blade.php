@@ -22,16 +22,15 @@
                                 <thead class="thead">
                                     <tr>
                                         <th class="text-center">#</th>
-										<th>Unidad</th>
-                                        <th>Nombre</th>
-										<th>Competencia especifica de la unidad</th>
-										<th>Temas </th>
-										<th>Subtemas</th>
-										<th>Estrategia(s) de Instrucción</th>
-										<th>Producto (s) y/o Aprendizaje(s)Esperado(s)</th>
-										<th>Sistema de evaluacion</th>
-										<th>Examenes</th>
-										<th>PLANEACIÓN DE PROYECTOS Y/O PRÁCTICAS</th>
+                                        <th class="text-center">Unidad</th>
+                                        <th class="text-center">Tema</th>
+                                        <th class="text-center">Competencia Específica del Tema</th>
+                                        <th class="text-center">Subtema y/o práctica </th>
+                                        <th class="text-center">Estrategia(s) de Instrucción</th>
+                                        <th class="text-center">Producto (s) y/o Aprendizaje(s)Esperado(s)</th>
+                                        <th class="text-center">Sistema de evaluacion</th>
+                                        <th class="text-center">Examenes</th>
+                                        <th class="text-center">Planeación de proyectos y/o prácticas</th>
                                     </tr>
                                 </thead>
                                 <tbody>

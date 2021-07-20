@@ -57,7 +57,7 @@
 											<td>{{$unidade->prodEsp}}</td>
 											<td><strong>Ejes:</strong> {{ $unidade->ejes}} <br><br><strong>Competencia:</strong> {{$unidade->competencias}} <br><br> <strong>Criterios: </strong>{{$unidade->criterios}} <br><br> <strong>Ponderaciones: </strong>{{$unidade->ponderaciones}} <br><br><strong>Total: </strong> {{$unidade->total}}</td>
 											<td><strong>Evaluación: </strong>{{$unidade->evaluacion}}<br><br><strong>Revisión de evaluación:</strong> {{$unidade->reveval}}<br><br><strong>Entrega Servicions Escolares:</strong> {{$unidade->entrSE}}</td>
-											<td></td>
+											<td><strong>Número de proyecto: </strong>{{$unidade->noPr}}<br><br><strong>Competencia: </strong>{{$unidade->competencia}}<br><br><strong>Ponderación: </strong>{{$unidade->ponderacion}}</td>
                                             <td class="td-actions text-right">
                                                 <form action="{{ route('unidades.destroy',$unidade->id) }}" method="POST">
                                                     <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('unidades.show',$unidade->id) }}">
