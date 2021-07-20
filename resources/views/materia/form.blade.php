@@ -1,44 +1,44 @@
 <div class="box box-info padding-1">
-    <div class="box-body">
+    <div class="form-row">
         
-        <div class="form-group">
-            {{ Form::label('nombre') }}
-            {{ Form::text('nombre', $materia->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
+        <div class="form-group col-md-2">
+            {{ Form::label('Asignatura:') }}
+            {{ Form::text('nombre', $materia->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Asignatura']) }}
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</p>') !!}
         </div>
-        <div class="form-group">
-            {{ Form::label('competenciaA') }}
-            {{ Form::text('competenciaA', $materia->competenciaA, ['class' => 'form-control' . ($errors->has('competenciaA') ? ' is-invalid' : ''), 'placeholder' => 'Competenciaa']) }}
+        <div class="form-group col-md-4">
+            {{ Form::label('Competencia Específica de la Asignatura:') }}
+            {{ Form::text('competenciaA', $materia->competenciaA, ['class' => 'form-control' . ($errors->has('competenciaA') ? ' is-invalid' : ''), 'placeholder' => 'Competencia Específica de la Asignatura']) }}
             {!! $errors->first('competenciaA', '<div class="invalid-feedback">:message</p>') !!}
         </div>
-        <div class="form-group">
-            {{ Form::label('fuentes') }}
+        <div class="form-group col-md-3">
+            {{ Form::label('Fuentes de Información:') }}
             {{ Form::text('fuentes', $materia->fuentes, ['class' => 'form-control' . ($errors->has('fuentes') ? ' is-invalid' : ''), 'placeholder' => 'Fuentes']) }}
             {!! $errors->first('fuentes', '<div class="invalid-feedback">:message</p>') !!}
         </div>
-        <div class="form-group">
-            {{ Form::label('unidades_id') }}
+        <div class="form-group col-md-4">
+            {{ Form::label('Unidad:') }}
             <select name="unidades_id" id="unidades_id" class="form-control">
             <option>Selecciona</option>
              @foreach ($unidades as $unidade)
-             <option value="{{$unidade['id']}}">{{$unidade['nomunidad']}}</option> 
+             <option value="{{$unidade->id}}">{{$unidade->nomunidad}}</option> 
             @endforeach
             </select>
-            {!! $errors->first('unidades_id', '<div class="invalid-feedback">:message</p>') !!}
+            {!! $errors->first('nomunidad', '<div class="invalid-feedback">:message</p>') !!}
         </div>
-        <div class="form-group">
-            {{ Form::label('sisevals_id') }}
-            <select name="sisevals_id" id="sisevals_id" class="form-control">
+        <div class="form-group col-md-4">
+            {{ Form::label('Sistema de Evaluación:') }}
+            <select name="siseval_id" id="siseval_id" class="form-control" multiple data-live-search="true" name="siseval[]">
             <option>Selecciona</option> 
              @foreach ($sisevals as $siseval)
-             <option value="{{$siseval['id']}}">{{$siseval['criterios']}}</option> 
+             <option value="{{$siseval->id}}">{{$siseval->criterios}}</option> 
             @endforeach
             </select>
-            {!! $errors->first('sisevals_id', '<div class="invalid-feedback">:message</p>') !!}
+            {!! $errors->first('criterios', '<div class="invalid-feedback">:message</p>') !!}
         </div>
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-social btn-fill btn-behance">Submit</button>
+        <center><button type="submit" class="btn btn-social btn-fill btn-behance">Submit</button></center>
     </div>
 </div>

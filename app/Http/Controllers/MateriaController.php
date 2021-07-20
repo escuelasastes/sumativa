@@ -36,7 +36,7 @@ class MateriaController extends Controller
         $materia = new Materia();
         $unidades =  Unidade::all();
         $sisevals =  SisEval::all();
-        return view('materia.create', compact('materia','unidades','sisevals'));
+        return view('materia.create', ['materia'=>$materia,'unidades'=>$unidades,'sisevals'=>$sisevals]);
     }
 
     /**

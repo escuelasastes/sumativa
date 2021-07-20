@@ -9,10 +9,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Unidade</span>
+                            <span class="card-title">Unidades</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('unidades.index') }}"> Back</a>
+                            <a class="btn btn-social btn-fill btn-reddit" href="{{ route('unidades.index') }}"> Back</a>
                         </div>
                     </div>
 
@@ -45,7 +45,7 @@
                                             <td>{{$tema->prodEsp}}</td>
                                             <td><strong>Ejes:</strong> {{ $tema->ejes}} <br><br><strong>Competencia:</strong> {{$tema->competencias}} <br><br> <strong>Criterios: </strong>{{$tema->criterios}} <br><br> <strong>Ponderaciones: </strong>{{$tema->ponderaciones}} <br><br><strong>Total: </strong> {{$tema->total}}</td>
                                             <td><strong>Evaluación: </strong>{{$tema->evaluacion}}<br><br><strong>Revisión de evaluación:</strong> {{$tema->reveval}}<br><br><strong>Entrega Servicions Escolares:</strong> {{$tema->entrSE}}</td>
-                                            <td></td>
+                                            <td><strong>Número de proyecto: </strong>{{$tema->noPr}}<br><br><strong>Competencia: </strong>{{$tema->competencia}}<br><br><strong>Ponderación: </strong>{{$tema->ponderacion}}</td>
                                             @endforeach
                                         </tr>
                                 </tbody>
