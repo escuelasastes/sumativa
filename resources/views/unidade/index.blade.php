@@ -33,34 +33,32 @@
                                 <thead class="thead">
                                     <tr>
                                         <th class="text-center">#</th>
-										<th>Unidad</th>
-                                        <th>Nombre</th>
-										<th>Competencia especifica de la unidad</th>
-										<th>Temas </th>
-										<th>Subtemas</th>
-										<th>Estrategia(s) de Instrucción</th>
-										<th>Producto (s) y/o Aprendizaje(s)Esperado(s)</th>
-										<th>Sistema de evaluacion</th>
-										<th>Examenes</th>
-										<th>PLANEACIÓN DE PROYECTOS Y/O PRÁCTICAS</th>
-                                        <th></th>
+										<th class="text-center">Unidad</th>
+                                        <th class="text-center">Tema</th>
+										<th class="text-center">Competencia Específica del Tema</th>
+										<th class="text-center">Subtema y/o práctica </th>
+										<th class="text-center">Estrategia(s) de Instrucción</th>
+										<th class="text-center">Producto (s) y/o Aprendizaje(s)Esperado(s)</th>
+										<th class="text-center">Sistema de evaluacion</th>
+										<th class="text-center">Examenes</th>
+										<th class="text-center">Planeación de proyectos y/o prácticas</th>
+                                        <th class="text-center"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($unidades as $unidade)
                                         <tr>
-                                            <td class="text-center">{{ ++$i }}</td>
-											<td>{{ $unidade->numUnidad }}</td>
+                                            <td class="text-center">{{ $loop->iteration }}</td>
+											<td class="text-center">{{ $unidade->numUnidad }}</td>
                                             <td>{{ $unidade->nomunidad }}</td>
 											<td>{{ $unidade->competEspTema }}</td>
-											<td>{{ $unidade->temas_id }}</td>
-											<td>{{ $unidade->subtemas_id }}</td>
-											<td>{{ $unidade->estrat_ins_id }}</td>
-											<td>{{ $unidade->prodespers_id }}</td>
-											<td>{{ $unidade->sisevals_id }}</td>
-											<td>{{ $unidade->examenes_id }}</td>
-											<td>{{ $unidade->planpros_id }}</td>
-                                            <td class="td-actions text-center">
+											<td>{{ $unidade->temas}} <br><br>{{$unidade->subtemas}}</td>
+											<td>{{ $unidade->estrategia}}</td>
+											<td>{{$unidade->prodEsp}}</td>
+											<td><strong>Ejes:</strong> {{ $unidade->ejes}} <br><br><strong>Competencia:</strong> {{$unidade->competencias}} <br><br> <strong>Criterios: </strong>{{$unidade->criterios}} <br><br> <strong>Ponderaciones: </strong>{{$unidade->ponderaciones}} <br><br><strong>Total: </strong> {{$unidade->total}}</td>
+											<td><strong>Evaluación: </strong>{{$unidade->evaluacion}}<br><br><strong>Revisión de evaluación:</strong> {{$unidade->reveval}}<br><br><strong>Entrega Servicions Escolares:</strong> {{$unidade->entrSE}}</td>
+											<td></td>
+                                            <td class="td-actions text-right">
                                                 <form action="{{ route('unidades.destroy',$unidade->id) }}" method="POST">
                                                     <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('unidades.show',$unidade->id) }}">
                                                         <i class="material-icons">person</i>
@@ -83,7 +81,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $unidades->links() !!}
             </div>
         </div>
     </div>
