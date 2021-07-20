@@ -39,24 +39,23 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-										<th class="text-right">Nombre</th>
-										<th class="text-right">Competencia</th>
-										<th class="text-right">Fuentes</th>
+										<th class="text-center">Asignatura</th>
+										<th class="text-center">Competencia Específica de la Asignatura</th>
 										<th class="text-right">Unidades</th>
 										<th class="text-right">Sistema de evaluacion</th>
-                                        <th class="text-right">Actions</th>
+										<th class="text-right">Fuentes</th>
+                                        <th class="text-right"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($materias as $materia)
                                         <tr>
-                                            <td class="text-center">{{ ++$i }}</td>
-											<td class="text-right">{{ $materia->nombre }}</td>
-											<td class="text-right">{{ $materia->competenciaA }}</td>
-											<td class="text-right">{{ $materia->fuentes }}</td>
-											<td class="text-right">{{ $materia->unidades_id }}</td>
-											<td class="text-right">{{ $materia->sisevals_id }}</td>
-
+                                            <td class="text-center">{{ $loop->iteration }}</td>
+											<td class="text-center">{{ $materia->nombre }}</td>
+											<td class="text-center">{{ $materia->competenciaA }}</td>
+											<td class="text-right">{{ $materia->numUnidad }} {{$materia->nomUnidad}} {{$materia->competEspTema}}</td>
+											<td class="text-right">{{ $materia->ejes }} {{ $materia->competencias }} {{ $materia->criterios }} {{ $materia->ponderaciones }} {{ $materia->total }}</td>
+                                            <td class="text-center">{{ $materia->fuentes }}</td>
                                             <td>
                                                 <form action="{{ route('materias.destroy',$materia->id) }}" method="POST">
                                                     <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('materias.show',$materia->id) }}">

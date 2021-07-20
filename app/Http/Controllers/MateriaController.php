@@ -20,10 +20,10 @@ class MateriaController extends Controller
      */
     public function index()
     {
-        $materias = Materia::paginate();
+        $materias =Materia::select('SELECT nombre,competenciaA,fuentes,numUnidad,nomUnidad,competEspTema,ejes,competencias,criterios,ponderaciones,total FROM materias,unidades,sisevals WHERE unidades.id=materias.unidades_id AND sisevals.id=unidades.sisevals_id;')
+        ->paginate(5);
 
-        return view('materia.index', compact('materias'))
-            ->with('i', (request()->input('page', 1) - 1) * $materias->perPage());
+        return view('materia.index', compact('materias'));
     }
 
     /**
