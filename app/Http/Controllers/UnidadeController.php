@@ -44,7 +44,10 @@ class UnidadeController extends Controller
         $estrat_ins =  EstratIn::all();
         $prodespers =  Prodesper::all();
         $sisevals =  SisEval::all();
-        $examenes =  Examene::all();
+        $examenes =  Examene::select("examenes.id","examenes.evaluacion","examenes.reveval","entrSE")
+        ->selectRaw("DATE_FORMAT(evaluacion,'%d/%m/%Y') as evaluacion")
+        ->selectRaw("DATE_FORMAT(reveval,'%d/%m/%Y') as reveval")
+        ->selectRaw("DATE_FORMAT(entrSE,'%d/%m/%Y') as entrSE")->get();
         $planpros =  Planpro::all();
         return view('unidade.create', compact('unidade','temas','subtemas','estrat_ins','prodespers','sisevals','examenes','planpros'));
     }
