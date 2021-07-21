@@ -60,7 +60,7 @@ class UnidadeController extends Controller
      */
     public function store(Request $request,Unidade $unidade)
     {
-        $request->validate([
+        $campos =[
             'numUnidad' => 'required',
             'nomunidad' => 'required',
             'competEspTema' => 'required',
@@ -71,22 +71,26 @@ class UnidadeController extends Controller
             'criterios' => 'required',
             'evaluacion' => 'required',
             'competencia' => 'required',
-        ]);
+        ];
 
-        $unidade->numUnidad=$request->get('numUnidad');
-        $unidade->nomunidad=$request->get('nomunidad');
-        $unidade->competEspTema=$request->get('competEspTema');
-        $unidade->temas_id=$request->get('temas');
-        $unidade->subtemas_id=$request->get('subtemas');
-        $unidade->estrat_ins_id=$request->get('estrategia');
-        $unidade->prodespers_id=$request->get('prodEsp');
-        $unidade->sisevals_id=$request->get('criterios');
-        $unidade->examenes_id=$request->get('evaluacion');
-        $unidade->planpros_id=$request->get('competencia');
+        $Mensaje = ['required' => ':campo requerido'];
+
+        $this->validate($request, $campos, $Mensaje);
+
+        $unidade->numUnidad=$request->input('numUnidad');
+        $unidade->nomunidad=$request->input('nomunidad');
+        $unidade->competEspTema=$request->input('competEspTema');
+        $unidade->temas_id=$request->input('temas');
+        $unidade->subtemas_id=$request->input('subtemas');
+        $unidade->estrat_ins_id=$request->input('estrategia');
+        $unidade->prodespers_id=$request->input('prodEsp');
+        $unidade->sisevals_id=$request->input('criterios');
+        $unidade->examenes_id=$request->input('evaluacion');
+        $unidade->planpros_id=$request->input('competencia');
         $unidade->save();
 
         return redirect()->route('unidades.index')
-            ->with('success', 'Unidade created successfully.');
+            ->with('success', 'Registro exitoso!!.');
     }
 
     /**
@@ -132,9 +136,9 @@ class UnidadeController extends Controller
      * @param  Unidade $unidade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Unidade $unidade)
     {
-        $request->validate([
+        $campos =[
             'numUnidad' => 'required',
             'nomunidad' => 'required',
             'competEspTema' => 'required',
@@ -145,18 +149,22 @@ class UnidadeController extends Controller
             'criterios' => 'required',
             'evaluacion' => 'required',
             'competencia' => 'required',
-        ]);
+        ];
 
-        $unidade->numUnidad=$request->get('numUnidad');
-        $unidade->nomunidad=$request->get('nomunidad');
-        $unidade->competEspTema=$request->get('competEspTema');
-        $unidade->temas_id=$request->get('temas');
-        $unidade->subtemas_id=$request->get('subtemas');
-        $unidade->estrat_ins_id=$request->get('estrategia');
-        $unidade->prodespers_id=$request->get('prodEsp');
-        $unidade->sisevals_id=$request->get('criterios');
-        $unidade->examenes_id=$request->get('evaluacion');
-        $unidade->planpros_id=$request->get('competencia');
+        $Mensaje = ['required' => ':campo requerido'];
+
+        $this->validate($request, $campos, $Mensaje);
+
+        $unidade->numUnidad=$request->input('numUnidad');
+        $unidade->nomunidad=$request->input('nomunidad');
+        $unidade->competEspTema=$request->input('competEspTema');
+        $unidade->temas_id=$request->input('temas');
+        $unidade->subtemas_id=$request->input('subtemas');
+        $unidade->estrat_ins_id=$request->input('estrategia');
+        $unidade->prodespers_id=$request->input('prodEsp');
+        $unidade->sisevals_id=$request->input('criterios');
+        $unidade->examenes_id=$request->input('evaluacion');
+        $unidade->planpros_id=$request->input('competencia');
         $unidade->update();
 
         return redirect()->route('unidades.index')

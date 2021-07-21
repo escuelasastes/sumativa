@@ -19,10 +19,10 @@
         <div class="form-group col-md-4">
             {{ Form::label('Unidad:') }}
             <select name="unidades" id="unidades" class="form-control">
-            <option>Selecciona</option>
-             @foreach ($unidades as $unidade)
-             <option value="{{$unidade->id}}">{{$unidade->nomunidad}}</option> 
-            @endforeach
+                <option>Selecciona</option>
+                @foreach ($unidades as $unidade)
+                    <option value="{{$unidade->id}}">{{$unidade->nomunidad}}</option> 
+                @endforeach
             </select>
             {!! $errors->first('nomunidad', '<div class="invalid-feedback">:message</p>') !!}
         </div>

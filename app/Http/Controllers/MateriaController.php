@@ -32,7 +32,7 @@ class MateriaController extends Controller
      */
     public function create()
     {
-        $materia=Materia::all();
+        $materia = new Materia();
         $unidades =  Unidade::all();
         $sisevals =  SisEval::all();
         return view('materia.create', ['materia'=>$materia,'unidades'=>$unidades,'sisevals'=>$sisevals]);
@@ -46,12 +46,22 @@ class MateriaController extends Controller
      */
     public function store(Request $request,Materia $materia)
     {
-        request()->validate(Materia::$rules);
+        $campos =[
+            'nombre' => 'required',
+            'competenciaA' => 'required',
+            'fuentes' => 'required',
+            'unidades' => 'required',
+            'criterios' => 'required',
+        ];
+
+        $Mensaje = ['required' => ':campo requerido'];
+
+        $this->validate($request, $campos, $Mensaje);
 
         $materia->nombre=$request->input('nombre');
         $materia->competenciaA=$request->input('competenciaA');
         $materia->fuentes=$request->input('fuentes');
-        $materia->unidades_id=$request->input('nomunidad');
+        $materia->unidades_id=$request->input('unidades');
         $materia->sisevals_id=$request->input('criterios');
         $materia->save();
 
@@ -94,17 +104,26 @@ class MateriaController extends Controller
      * @param  Materia $materia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Materia $materia)
     {
-        request()->validate(Materia::$rules);
+        $campos =[
+            'nombre' => 'required',
+            'competenciaA' => 'required',
+            'fuentes' => 'required',
+            'unidades' => 'required',
+            'criterios' => 'required',
+        ];
 
-        $materia = Materia::where('id',$id)->first();
+        $Mensaje = ['required' => ':campo requerido'];
+
+        $this->validate($request, $campos, $Mensaje);
+
         $materia->nombre=$request->input('nombre');
         $materia->competenciaA=$request->input('competenciaA');
         $materia->fuentes=$request->input('fuentes');
-        $materia->unidades_id=$request->input('nomunidad');
+        $materia->unidades_id=$request->input('unidades');
         $materia->sisevals_id=$request->input('criterios');
-        $materia->save();
+        $materia->update();
 
         return redirect()->route('materias.index')
             ->with('success', 'Materia updated successfully');
