@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Planeacione;
 use App\Models\Materia;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 /**
@@ -19,10 +20,9 @@ class PlaneacioneController extends Controller
      */
     public function index()
     {
-        $planeaciones = Planeacione::paginate();
+        $planeaciones = DB::select('SELECT planeaciones.id,nombre,competenciaA,fuentes FROM planeaciones,materias WHERE materias.id=planeaciones.materias_id;');
 
-        return view('planeacione.index', compact('planeaciones'))
-            ->with('i', (request()->input('page', 1) - 1) * $planeaciones->perPage());
+        return view('planeacione.index',['planeaciones'=>$planeaciones]);
     }
 
     /**
@@ -62,8 +62,8 @@ class PlaneacioneController extends Controller
     public function show($id)
     {
         $planeacione = Planeacione::find($id);
-
-        return view('planeacione.show', compact('planeacione'));
+        $planeaciones = DB::select('SELECT planeaciones.id,nombre,competenciaA,fuentes FROM planeaciones,materias WHERE materias.id=planeaciones.materias_id;');
+        return view('planeacione.show', compact('planeacione','planeaciones'));
     }
 
     /**

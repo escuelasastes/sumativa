@@ -37,15 +37,15 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-										<th class="text-center">Materias</th>
+										<th class="text-left">Materias</th>
                                         <th class="text-right"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($planeaciones as $planeacione)
                                         <tr>
-                                            <td class="text-center">{{ ++$i }}</td>
-											<td class="text-center">{{ $planeacione->materias_id }}</td>
+                                            <td class="text-center">{{ $loop->iteration }}</td>
+											<td class="text-left"><strong>Asignatura: </strong>{{ $planeacione->nombre }}<br><br><strong>competencia especifica de la asignatura: </strong>{{$planeacione->competenciaA}}<br><br><strong>Fuentes: </strong>{{$planeacione->fuentes}}</td>
                                             <td class="td-actions text-right">
                                                 <form action="{{ route('planeaciones.destroy',$planeacione->id) }}" method="POST">
                                                     <a class="btn btn-info btn-just-icon btn-sm" href="{{ route('planeaciones.show',$planeacione->id) }}">
@@ -57,7 +57,7 @@
                                                     </a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm">
+                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm" onclick="return confirm('Estas Seguro de ¿Borrar?');">
                                                         <i class="material-icons">delete</i>
                                                     </button>
                                                 </form>
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $planeaciones->links() !!}
+
             </div>
         </div>
     </div>

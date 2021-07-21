@@ -42,7 +42,7 @@
 										<th class="text-center">Sistema de evaluacion</th>
 										<th class="text-center">Examenes</th>
 										<th class="text-center">Planeación de proyectos y/o prácticas</th>
-                                        <th class="text-center"></th>
+                                        <th width="150px"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -67,9 +67,9 @@
                                                     <a class="btn btn-success btn-just-icon btn-sm" rel="tooltip" href="{{ route('unidades.edit',$unidade->id) }}">
                                                         <i class="material-icons">edit</i>
                                                     </a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm" onclick="return confirm('Estas Seguro de ¿Borrar?');">
                                                         <i class="material-icons">delete</i>
                                                     </button>
                                                 </form>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Materia;
 use App\Models\Unidade;
 use App\Models\SisEval;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 /**
@@ -20,9 +21,7 @@ class MateriaController extends Controller
      */
     public function index()
     {
-        $materias =Materia::select('SELECT nombre,competenciaA,fuentes,numUnidad,nomUnidad,competEspTema,ejes,competencias,criterios,ponderaciones,total FROM materias,unidades,sisevals WHERE unidades.id=materias.unidades_id AND sisevals.id=unidades.sisevals_id;')
-        ->paginate(5);
-
+        $materias =DB::select('SELECT materias.id,nombre,competenciaA,fuentes,numUnidad,nomunidad,competEspTema,ejes,competencias,criterios,ponderaciones,total FROM materias,unidades,sisevals WHERE unidades.id=materias.unidades_id AND sisevals.id=unidades.sisevals_id; ');
         return view('materia.index', compact('materias'));
     }
 
@@ -33,7 +32,7 @@ class MateriaController extends Controller
      */
     public function create()
     {
-        $materia = new Materia();
+        $materia=Materia::all();
         $unidades =  Unidade::all();
         $sisevals =  SisEval::all();
         return view('materia.create', ['materia'=>$materia,'unidades'=>$unidades,'sisevals'=>$sisevals]);
@@ -45,11 +44,16 @@ class MateriaController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Materia $materia)
     {
         request()->validate(Materia::$rules);
 
-        $materia = Materia::create($request->all());
+        $materia->nombre=$request->input('nombre');
+        $materia->competenciaA=$request->input('competenciaA');
+        $materia->fuentes=$request->input('fuentes');
+        $materia->unidades_id=$request->input('nomunidad');
+        $materia->sisevals_id=$request->input('criterios');
+        $materia->save();
 
         return redirect()->route('materias.index')
             ->with('success', 'Materia created successfully.');
@@ -64,8 +68,9 @@ class MateriaController extends Controller
     public function show($id)
     {
         $materia = Materia::find($id);
+        $materias =DB::select('SELECT materias.id,nombre,competenciaA,fuentes,numUnidad,nomunidad,competEspTema,ejes,competencias,criterios,ponderaciones,total FROM materias,unidades,sisevals WHERE unidades.id=materias.unidades_id AND sisevals.id=unidades.sisevals_id; ');
 
-        return view('materia.show', compact('materia','unidades'));
+        return view('materia.show', compact('materia','materias'));
     }
 
     /**
@@ -76,9 +81,10 @@ class MateriaController extends Controller
      */
     public function edit($id)
     {
-        $materia = Materia::find($id);
-
-        return view('materia.edit', compact('materia'));
+        $materia = Materia::where('id',$id)->first();
+        $unidades =  Unidade::all();
+        $sisevals =  SisEval::all();
+        return view('materia.edit', ['materia'=>$materia,'unidades'=>$unidades,'sisevals'=>$sisevals]);
     }
 
     /**
@@ -88,11 +94,17 @@ class MateriaController extends Controller
      * @param  Materia $materia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Materia $materia)
+    public function update(Request $request, $id)
     {
         request()->validate(Materia::$rules);
 
-        $materia->update($request->all());
+        $materia = Materia::where('id',$id)->first();
+        $materia->nombre=$request->input('nombre');
+        $materia->competenciaA=$request->input('competenciaA');
+        $materia->fuentes=$request->input('fuentes');
+        $materia->unidades_id=$request->input('nomunidad');
+        $materia->sisevals_id=$request->input('criterios');
+        $materia->save();
 
         return redirect()->route('materias.index')
             ->with('success', 'Materia updated successfully');

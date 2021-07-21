@@ -43,7 +43,7 @@
 										<th class="text-center">Competencia Específica de la Asignatura</th>
 										<th class="text-right">Unidades</th>
 										<th class="text-right">Sistema de evaluacion</th>
-										<th class="text-right">Fuentes</th>
+										<th class="text-center">Fuentes</th>
                                         <th class="text-right"></th>
                                     </tr>
                                 </thead>
@@ -51,11 +51,11 @@
                                     @foreach ($materias as $materia)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
-											<td class="text-center">{{ $materia->nombre }}</td>
-											<td class="text-center">{{ $materia->competenciaA }}</td>
-											<td class="text-right">{{ $materia->numUnidad }} {{$materia->nomUnidad}} {{$materia->competEspTema}}</td>
-											<td class="text-right">{{ $materia->ejes }} {{ $materia->competencias }} {{ $materia->criterios }} {{ $materia->ponderaciones }} {{ $materia->total }}</td>
-                                            <td class="text-center">{{ $materia->fuentes }}</td>
+											<td class="text-left">{{ $materia->nombre }}</td>
+											<td class="text-left">{{ $materia->competenciaA }}</td>
+											<td class="text-left"><strong>Unidad: </strong>{{ $materia->numUnidad }} <br><br>{{$materia->nomunidad}}<br><br>{{$materia->competEspTema}}</td>
+											<td class="text-left"><strong>Ejes: </strong>{{ $materia->ejes }}<br><br><strong>Competencias: </strong>{{ $materia->competencias }}<br><br><strong>Criterios: </strong>{{ $materia->criterios }}<br><br><strong>Ponderaciones: </strong>{{ $materia->ponderaciones }}<br><br><strong>Total: </strong>{{ $materia->total }}</td>
+                                            <td class="text-left">{{ $materia->fuentes }}</td>
                                             <td>
                                                 <form action="{{ route('materias.destroy',$materia->id) }}" method="POST">
                                                     <a class="btn btn-info btn-just-icon btn-sm" rel="tooltip" href="{{ route('materias.show',$materia->id) }}">
@@ -67,7 +67,7 @@
                                                     </a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm">
+                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm" onclick="return confirm('Estas Seguro de ¿Borrar?');">
                                                         <i class="material-icons">delete</i>
                                                     </button>
                                                 </form>
@@ -79,7 +79,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $materias->links() !!}
             </div>
         </div>
     </div>

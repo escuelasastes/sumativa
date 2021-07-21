@@ -18,11 +18,7 @@ use Illuminate\Database\Eloquent\Model;
 class Subtema extends Model
 {
     
-    static $rules = [
-		'subtemas' => 'required',
-    ];
-
-    protected $perPage = 20;
+    protected $primaryKey = "id";
 
     /**
      * Attributes that should be mass-assignable.

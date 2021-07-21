@@ -18,28 +18,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Planeacione extends Model
 {
-    
-    static $rules = [
-		'materias_id' => 'required',
-    ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
+  
+    protected $primaryKey = "id";
     protected $fillable = ['materias_id'];
-
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function materia()
-    {
-        return $this->hasOne('App\Models\Materia', 'id', 'materias_id');
-    }
     
-
 }

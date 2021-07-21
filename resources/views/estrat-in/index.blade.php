@@ -53,7 +53,7 @@
                                                     </a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm">
+                                                    <button type="submit" class="btn btn-danger btn-just-icon btn-sm" onclick="return confirm('Estas Seguro de ¿Borrar?');">
                                                         <i class="material-icons">delete</i>
                                                     </button>
                                                 </form>

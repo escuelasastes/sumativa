@@ -18,7 +18,7 @@
         </div>
         <div class="form-group col-md-4">
             {{ Form::label('Unidad:') }}
-            <select name="unidades_id" id="unidades_id" class="form-control">
+            <select name="unidades" id="unidades" class="form-control">
             <option>Selecciona</option>
              @foreach ($unidades as $unidade)
              <option value="{{$unidade->id}}">{{$unidade->nomunidad}}</option> 
@@ -28,7 +28,7 @@
         </div>
         <div class="form-group col-md-4">
             {{ Form::label('Sistema de Evaluación:') }}
-            <select name="siseval_id" id="siseval_id" class="form-control" multiple data-live-search="true" name="siseval[]">
+            <select name="criterios" id="criterios" class="form-control">
             <option>Selecciona</option> 
              @foreach ($sisevals as $siseval)
              <option value="{{$siseval->id}}">{{$siseval->criterios}}</option> 

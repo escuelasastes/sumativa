@@ -58,11 +58,32 @@ class UnidadeController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Unidade $unidade)
     {
-        request()->validate(Unidade::$rules);
+        $request->validate([
+            'numUnidad' => 'required',
+            'nomunidad' => 'required',
+            'competEspTema' => 'required',
+            'temas' => 'required',
+            'subtemas' => 'required',
+            'estrategia' => 'required',
+            'prodEsp' => 'required',
+            'criterios' => 'required',
+            'evaluacion' => 'required',
+            'competencia' => 'required',
+        ]);
 
-        $unidade = Unidade::create($request->all());
+        $unidade->numUnidad=$request->get('numUnidad');
+        $unidade->nomunidad=$request->get('nomunidad');
+        $unidade->competEspTema=$request->get('competEspTema');
+        $unidade->temas_id=$request->get('temas');
+        $unidade->subtemas_id=$request->get('subtemas');
+        $unidade->estrat_ins_id=$request->get('estrategia');
+        $unidade->prodespers_id=$request->get('prodEsp');
+        $unidade->sisevals_id=$request->get('criterios');
+        $unidade->examenes_id=$request->get('evaluacion');
+        $unidade->planpros_id=$request->get('competencia');
+        $unidade->save();
 
         return redirect()->route('unidades.index')
             ->with('success', 'Unidade created successfully.');
@@ -113,20 +134,30 @@ class UnidadeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        request()->validate(Unidade::$rules);
+        $request->validate([
+            'numUnidad' => 'required',
+            'nomunidad' => 'required',
+            'competEspTema' => 'required',
+            'temas' => 'required',
+            'subtemas' => 'required',
+            'estrategia' => 'required',
+            'prodEsp' => 'required',
+            'criterios' => 'required',
+            'evaluacion' => 'required',
+            'competencia' => 'required',
+        ]);
 
-        $unidade = Unidade::where('id',$id)->first();
-        $unidade->numUnidad=$request->input('numUnidad');
-        $unidade->nomunidad=$request->input('nomunidad');
-        $unidade->competEspTema=$request->input('competEspTema');
-        $unidade->temas=$request->input('temas');
-        $unidade->subtemas=$request->input('subtemas');
-        $unidade->estrategia=$request->input('estrategia');
-        $unidade->prodEsp=$request->input('prodEsp');
-        $unidade->criterios=$request->input('criterios');
-        $unidade->evaluacion=$request->input('evaluacion');
-        $unidade->competencia=$request->input('competencia');
-        $unidade->save();
+        $unidade->numUnidad=$request->get('numUnidad');
+        $unidade->nomunidad=$request->get('nomunidad');
+        $unidade->competEspTema=$request->get('competEspTema');
+        $unidade->temas_id=$request->get('temas');
+        $unidade->subtemas_id=$request->get('subtemas');
+        $unidade->estrat_ins_id=$request->get('estrategia');
+        $unidade->prodespers_id=$request->get('prodEsp');
+        $unidade->sisevals_id=$request->get('criterios');
+        $unidade->examenes_id=$request->get('evaluacion');
+        $unidade->planpros_id=$request->get('competencia');
+        $unidade->update();
 
         return redirect()->route('unidades.index')
             ->with('success', 'Unidade updated successfully');
@@ -137,11 +168,11 @@ class UnidadeController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function destroy($id)
-    {
-        $unidade = Unidade::find($id)->delete();
+    public function destroy($id) {
+
+        DB::table('unidades')->where('id',$id)->delete();;
 
         return redirect()->route('unidades.index')
-            ->with('success', 'Unidade deleted successfully');
+            ->with('success', 'El mensaje Ha sido eliminado');
     }
 }

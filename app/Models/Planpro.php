@@ -20,21 +20,7 @@ use Illuminate\Database\Eloquent\Model;
 class Planpro extends Model
 {
     
-    static $rules = [
-		'noPr' => 'required',
-		'competencia' => 'required',
-		'ponderacion' => 'required',
-    ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
+    protected $primaryKey = "id";
     protected $fillable = ['noPr','competencia','ponderacion'];
-
-
 
 }

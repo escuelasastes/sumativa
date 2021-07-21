@@ -18,12 +18,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tema extends Model
 {
     
-    static $rules = [
-		'temas' => 'required',
-    ];
-
-    protected $perPage = 20;
-
+    protected $primaryKey = 'id';
     /**
      * Attributes that should be mass-assignable.
      *

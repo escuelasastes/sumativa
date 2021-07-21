@@ -22,21 +22,7 @@ use Illuminate\Database\Eloquent\Model;
 class Siseval extends Model
 {
     
-    static $rules = [
-		'ejes' => 'required',
-		'competencias' => 'required',
-		'criterios' => 'required',
-		'ponderaciones' => 'required',
-		'total' => 'required',
-    ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
+    protected $primaryKey = "id";
     protected $fillable = ['ejes','competencias','criterios','ponderaciones','total'];
 
 

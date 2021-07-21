@@ -18,11 +18,7 @@ use Illuminate\Database\Eloquent\Model;
 class Prodesper extends Model
 {
     
-    static $rules = [
-		'prodEsp' => 'required',
-    ];
-
-    protected $perPage = 20;
+    protected $primaryKey = "id";
 
     /**
      * Attributes that should be mass-assignable.

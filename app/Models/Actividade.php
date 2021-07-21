@@ -4,33 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class Actividade
- *
- * @property $id
- * @property $actividad
- * @property $created_at
- * @property $updated_at
- *
- * @package App
- * @mixin \Illuminate\Database\Eloquent\Builder
- */
 class Actividade extends Model
 {
     
-    static $rules = [
-		'actividad' => 'required',
-    ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
+    protected $primaryKey = "id";
     protected $fillable = ['actividad'];
-
-
-
 }

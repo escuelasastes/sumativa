@@ -28,7 +28,9 @@
                                 <tbody>
                                         <tr>
                                             <td class="text-center">{{$planeacione->id }}</td>
-											<td class="text-center">{{ $planeacione->materias_id }}</td>
+                                            @foreach($planeaciones as $planeacion)
+											    <td class="text-left"><strong>Asignatura: </strong>{{ $planeacion->nombre }}<br><br><strong>competencia especifica de la asignatura: </strong>{{$planeacion->competenciaA}}<br><br><strong>Fuentes: </strong>{{$planeacion->fuentes}}</td>
+                                            @endforeach
                                         </tr>
                                 </tbody>
                             </table>
